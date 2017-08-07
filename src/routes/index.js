@@ -13,9 +13,7 @@ class App extends Component {
     return (
       <HashRouter>
         <Router basename="/">
-          <div>
             <Route exact path="/" component={menuNav}/>
-          </div>
         </Router>
       </HashRouter>
     );
