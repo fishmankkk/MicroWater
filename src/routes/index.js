@@ -1,23 +1,28 @@
 
 import React, { Component } from 'react';
 import menuNav from '../view/user_page/nav/index';
+import userIndex from '../view/user_page/main_page/index';
+import testAPP from '../App';
 import {
   BrowserRouter as Router,
   Route,
   HashRouter  
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-
-class App extends Component {
+class RouterSetting extends Component {
   render() {
     return (
       <HashRouter>
         <Router basename="/">
-            <Route exact path="/" component={menuNav}/>
+        <div className="height-100">
+            <Route exact path="/" component={userIndex}/>
+            <Route path="/menuNav" component={menuNav}/>
+            <Route path="/testAPP" component={testAPP}/>
+        </div>
         </Router>
       </HashRouter>
     );
   }
 }
 
-export default App;
+export default RouterSetting;

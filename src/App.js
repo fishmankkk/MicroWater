@@ -1,23 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Button } from 'antd';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <Button type="primary">Button</Button>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const CustomLinkExample = () => (
+  <Router>
+    <div>
+      <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home"/>
+      <OldSchoolMenuLink to="/about" label="About"/>
+      <hr/>
+      <Route exact path="/" component={Home}/>
+      <Route path="/about" component={About}/>
+    </div>
+  </Router>
+)
 
-export default App;
+const OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => (
+  <Route path={to} exact={activeOnlyWhenExact} children={({ match }) => (
+    <div className={match ? 'active' : ''}>
+      {match ? '> ' : ''}<Link to={to}>{label}</Link>
+    </div>
+  )}/>
+)
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+)
+
+export default CustomLinkExample

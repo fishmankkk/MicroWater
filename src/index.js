@@ -5,5 +5,5 @@ import './index.css';
 import RouterIndex from './routes/index';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<RouterIndex />, document.getElementById('root'));
+ReactDOM.render(<RouterIndex/>, document.getElementById('root'));
 registerServiceWorker();
