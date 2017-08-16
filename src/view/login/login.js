@@ -14,10 +14,11 @@ class NameForm extends React.Component {
   }
 
   handleOk(event) {
-    console.log('dsadas')
+    let val = this.props.form.getFieldValue()
+    console.log(val)
   }
   render() {
-    const { getFieldDecorator, validateFieldsAndScroll } = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     return (
       <div className={styles.form}>
         <div className={styles.logo}>
