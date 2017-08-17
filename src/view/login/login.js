@@ -2,9 +2,7 @@ import React from 'react'
 import { Button, Row, Form, Input } from 'antd'
 import styles from './style/login.scss'
 import logoImg from '../../assets/image/mricowater.png'
-console.log(styles.form, styles.logo);  
 const FormItem = Form.Item
-
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +12,12 @@ class NameForm extends React.Component {
   }
 
   handleOk(event) {
+    this.props.form.validateFields((errors, values) => {
+      if (errors) {
+        return
+      }
+      this.props.history.push('/menuNav')
+    })
     let val = this.props.form.getFieldValue()
     console.log(val)
   }

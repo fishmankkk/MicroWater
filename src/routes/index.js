@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import menuNav from '../view/user_page/nav/index';
-import userIndex from '../view/user_page/main_page/index';
 import Login from '../view/login/login';
 import testAPP from '../App';
 import {
