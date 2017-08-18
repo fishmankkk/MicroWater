@@ -4,6 +4,7 @@ import '../../../gobal/style-import';
 import MenuNav from '../../../components/menu-nav/menu-nav';
 import HeadDetail from '../../../components/head/head';
 import navList from '../../../gobal/configure/nav-configure';
+import HomeMainAction from './action/action'
 import logoImg from '../../../assets/image/mricowater.png'
 import styles from './style/style.scss'
 const { Header, Sider, Content } = Layout;
@@ -16,6 +17,9 @@ class SiderDemo extends React.Component {
     this.setState({
       collapsed: !this.state.collapsed,
     });
+  }
+  logoutFunc = () => {
+    console.log('logout')
   }
   render() {
     return (
@@ -32,8 +36,6 @@ class SiderDemo extends React.Component {
               <Col span={5}><img alt="logo" src={logoImg}/></Col>
               <Col span={19}><span className="m_water_font-b m_water_f-keyword">MRICOWATER</span></Col>
             </Row>
-            
-            
           </div>
           <MenuNav menuList={menus}/>
         </Sider>
@@ -48,7 +50,7 @@ class SiderDemo extends React.Component {
             />
             </Col>
             <Col span={23}>
-              <HeadDetail/>
+              <HeadDetail img={logoImg} username="超级管理员" logout={this.logoutFunc}/>
             </Col>
           </Row>
             

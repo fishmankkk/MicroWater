@@ -22,5 +22,5 @@ export default class MenuNav extends Component {
 }
 
 MenuNav.propTypes = {
-  menuList: PropTypes.object
+  menuList: PropTypes.array
 };
