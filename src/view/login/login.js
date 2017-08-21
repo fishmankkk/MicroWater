@@ -16,7 +16,7 @@ class NameForm extends React.Component {
       if (errors) {
         return
       }
-      this.props.history.push('/menuNav')
+      this.props.history.push('/Homepage')
     })
     let val = this.props.form.getFieldValue()
     console.log(val)
