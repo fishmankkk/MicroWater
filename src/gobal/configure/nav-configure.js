@@ -3,7 +3,7 @@ const nav_json = [
 		title: '个人中心',
         icon: 'laptop',
 		page_name: 'm_water_home',
-		page_route: 'Dashboard'
+		page_route: ''
 	},
     {
 		title: '短信管理',

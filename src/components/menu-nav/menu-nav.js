@@ -4,6 +4,12 @@ import {
 } from 'react-router-dom'
 import {Menu, Icon } from 'antd';
 export default class MenuNav extends Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.mounted = true;
+  }
   render() {
       function handleClick(e) {
         console.log('click ', e);

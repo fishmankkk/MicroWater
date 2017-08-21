@@ -5,6 +5,10 @@ import {
   Switch
 } from 'react-router-dom'
 import { Layout, Icon, Row, Col } from 'antd';
+import { Menu, Button } from 'antd';
+import {
+  Link
+} from 'react-router-dom'
 import '../../../gobal/style-import';
 import MenuNav from '../../../components/menu-nav/menu-nav';
 import HeadDetail from '../../../components/head/head';
@@ -17,7 +21,7 @@ const { Header, Sider, Content } = Layout;
 const routes=Routes
 const menus = navList;
 const RouteWithSubRoutes = (route) => (
-  <Route path={route.path}   exact={route.exact} render={props => (
+  <Route path={route.path} render={props => (
     // pass the sub-routes down to keep nesting
     <route.component {...props} routes={route.routes}/>
   )}/>
@@ -51,6 +55,23 @@ class SiderDemo extends React.Component {
                 <Col span={19}><span className="m_water_font-b m_water_f-keyword">MRICOWATER</span></Col>
               </Row>
             </div>
+            {/*<Menu
+              mode="inline"
+              theme="dark"
+            >
+            <Menu.Item key="1">
+              <Link to={`/Homepage`}>
+              <Icon type="pie-chart" />
+              <span>Option 1</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to={`/Homepage/Test`}>
+              <Icon type="pie-chart" />
+              <span>Option 2</span>
+              </Link>
+            </Menu.Item>
+            </Menu>*/}
             <MenuNav menuList={menus}/>
           </Sider>
           <Layout>
